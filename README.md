@@ -9,6 +9,24 @@ Nguyen Quang Dieu High School for the Gifted, Dong Thap, November 2023).
 The webcam script labels each frame in real time; the intended hardware
 routes the item to the matching bin once the same label holds for 5 seconds.
 
+| Live recognition: e-waste | Live recognition: glasses → glass |
+| --- | --- |
+| ![E-waste recognised live](docs/demo-e-waste.jpg) | ![Glasses recognised as glass](docs/demo-glass.jpg) |
+
+## System
+
+![3D design of the sorting bin](docs/bin-design.jpg)
+
+1. A motion sensor detects an item placed on the intake; a light sensor
+   switches on a lamp when it is too dark for the camera.
+2. The camera frame goes through the classifier (`Run.py`).
+3. An ESP32 drives relays: conveyor 1 carries the item in, conveyor 2 moves
+   it over the bin for its class, and the item drops in.
+
+![ESP32 wiring with sensors and relay](docs/wiring.jpg)
+
+The full design, flowcharts and test photos are in the report PDF.
+
 ## Files
 
 | File | What it is |
